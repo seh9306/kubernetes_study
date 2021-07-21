@@ -43,3 +43,34 @@ kubectl create -f test-pod.yaml
 ```
 
 위 옵션으로 설정 파일로도 파드 생성/실행이 가능하다. 
+
+### 네임스페이스 생성하기
+
+```
+kubectl create namespace [네임스페이스이름]
+```
+
+### 네임스페이스 스위칭하기 ( 새로운 컨텍스트 생성 )
+
+컨텍스트, 클러스터, 유저 이름은 알아서 지정하면 됨
+```
+kubectl config set-context [컨텍스트이름] --cluster=[클러스터이름] --user=[유저이름] --namespace=[네임스페이스이름]
+```
+
+컨텍스트 변경하기
+``` 
+kubectl config use-context [컨텍스트이름]
+```
+
+현재 컨텍스트 확인하기
+```
+kubectl config current-context 
+```
+
+### 네임스페이스 스위칭하기 ( 기존 컨텍스트 변경 )
+
+```
+kubectl config set-context --current --namespace=[네임스페이스이름]
+# 확인하기
+kubectl config view --minify | grep namespace:
+```

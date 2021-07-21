@@ -74,3 +74,22 @@ kubectl config set-context --current --namespace=[네임스페이스이름]
 # 확인하기
 kubectl config view --minify | grep namespace:
 ```
+
+### api 확인하기
+
+```
+kubectl explain pod
+kubectl explain service 
+```
+
+### linux watch 명령어를 이용해서 pod 감시하기
+
+```
+watch kubectl get pods -o wide
+```
+
+### 멀티 파드에서 특정 컨테이너로 접근
+
+```
+kubectl exec [파드이름] -c [컨테이너이름] -it -- /bin/bash
+```

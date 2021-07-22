@@ -115,3 +115,15 @@ kubectl rollout resume deployment [디플로이이름]
 kubectl rollout undo deploy [디플로이이름]
 ```
 
+### 토큰 관련
+리스트
+```
+kubeadm token list
+```
+새로운 토큰 생성
+
+```
+kubeadm token create --ttl 1h
+```
+
+kubeadm init 했을 때 나오는 그 토큰(--token {위에 나온 결과})! 생성 후 1일이면 만료되기 때문에 클러스터에 새롭게 조인할 때 새로운 토큰을 생성해야한다. 

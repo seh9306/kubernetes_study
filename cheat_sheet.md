@@ -93,3 +93,25 @@ watch kubectl get pods -o wide
 ```
 kubectl exec [파드이름] -c [컨테이너이름] -it -- /bin/bash
 ```
+
+### 롤링 업데이트에 대한 히스토리 보기
+
+디플로이에 대한 히스토리를 보기 위해서는 디플로이 생성 시 --record 옵션을 줘야함. 
+
+```
+kubectl rollout history deployment [디플로이이름]
+```
+
+### 롤링 업데이트 시 일시정지, 재시작
+
+```
+kubectl rollout pause deployment [디플로이이름]
+kubectl rollout resume deployment [디플로이이름]
+```
+
+### 롤링 업데이트 롤백
+
+```
+kubectl rollout undo deploy [디플로이이름]
+```
+

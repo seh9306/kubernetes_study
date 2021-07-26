@@ -127,3 +127,11 @@ kubeadm token create --ttl 1h
 ```
 
 kubeadm init 했을 때 나오는 그 토큰(--token {위에 나온 결과})! 생성 후 1일이면 만료되기 때문에 클러스터에 새롭게 조인할 때 새로운 토큰을 생성해야한다. 
+
+### 컨트롤러 삭제 시 pod를 유지하는 명령
+
+```
+kubectl delete [컨트롤러타입] [컨트롤러이름] --cascade=false
+kubectl delete rs rs-nginx --cascade=false
+```
+

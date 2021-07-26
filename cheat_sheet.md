@@ -135,3 +135,8 @@ kubectl delete [컨트롤러타입] [컨트롤러이름] --cascade=false
 kubectl delete rs rs-nginx --cascade=false
 ```
 
+### Deploy의 이미지를 수정하는 명령
+
+```
+kubectl set image deploy [배포이름] [컨테이너이름]=[도커이미지]:[버전]
+```

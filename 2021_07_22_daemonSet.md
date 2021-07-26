@@ -48,3 +48,15 @@ spec:
             - name: nginx-container
               image: nginx:1.14
 ```
+
+ds는 rs와 다르게 아래 명령을 통해 이미지를 변경하면 롤링업데이트가 진행된다.
+
+```
+kubectl edit ds daemonset-nginx
+```
+
+롤백 명령어
+
+```
+kubectl rollout undo daemonset daemonset-nginx
+```

@@ -118,3 +118,12 @@ kubectl describe pod rc-test-gj97b
 ```
 
 버전이 변경되지 않음을 확인.
+
+하지만, 강제로 pod를 지우고 rc가 다시 파드를 생성하게되면
+
+```
+kubectl delete pod --all 
+```
+
+변경된 버전으로 파드가 생성된다.
+
